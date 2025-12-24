@@ -1,0 +1,319 @@
+/* --- ПЕРЕМЕННЫЕ И БАЗОВЫЕ НАСТРОЙКИ --- */
+:root {
+    --primary-color: #2C5E50; /* Глубокий зеленый - медицина и спокойствие */
+    --accent-color: #D35400; /* Терракотовый - тепло, акцент для кнопок */
+    --bg-light: #F9F9F9; /* Светлый фон */
+    --text-dark: #333333; /* Основной текст */
+    --text-light: #666666; /* Вторичный текст */
+    --white: #ffffff;
+    --container-width: 1140px;
+    --radius: 8px;
+    --transition: 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; color: var(--primary-color); text-align: center; margin-bottom: 3rem; }
+h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+
+p { margin-bottom: 1rem; }
+
+a { text-decoration: none; }
+
+ul { list-style: none; }
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: var(--radius);
+    cursor: pointer;
+    border: none;
+    transition: var(--transition);
+    box-shadow: 0 4px 10px rgba(211, 84, 0, 0.3);
+}
+
+.btn:hover {
+    background-color: #b04600;
+    transform: translateY(-2px);
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* --- БЛОК 1: HERO (ПЕРВЫЙ ЭКРАН) --- */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 1100px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 5rem;
+    opacity: 0.9;
+}
+
+.benefits-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.benefits-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.cta-wrapper {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 20px 25px;
+    border-radius: var(--radius);
+    border-left: 4px solid var(--accent-color);
+    margin-bottom: 2rem;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: fit-content;
+}
+
+.cta-text {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* Микро-отзыв */
+.micro-review {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    font-style: italic;
+    opacity: 0.8;
+    border-left: 2px solid var(--white);
+    padding-left: 10px;
+}
+
+/* --- БЛОК 2: СПЕЦИАЛИСТЫ --- */
+.specialists {
+    background-color: var(--bg-light);
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.spec-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.card-tag {
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* --- БЛОК 3: ПРОЦЕСС --- */
+.process-steps {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.step {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    position: relative;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 20px;
+}
+
+/* --- БЛОК 4: ОТЗЫВЫ --- */
+.reviews {
+    background-color: var(--bg-light);
+}
+
+.review-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: var(--radius);
+    border-left: 4px solid var(--primary-color);
+}
+
+.review-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* --- БЛОК 5: ТЕХНОЛОГИИ --- */
+.tech-card h3 {
+    color: var(--primary-color);
+}
+
+/* --- БЛОК 6: ЦЕНЫ --- */
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.price-table th, .price-table td {
+    padding: 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.price-table th {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.price-row-highlight {
+    background-color: #fff8e1; /* Светло-желтый для выделения */
+    font-weight: bold;
+}
+
+/* --- БЛОК 7: ДЛЯ СВОИХ (OFFER) --- */
+.offer-section {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+}
+
+.offer-section h2 {
+    color: var(--white);
+}
+
+/* --- БЛОК 8: ЗАПИСЬ --- */
+.contact-container {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-form {
+    max-width: 500px;
+    width: 100%;
+    min-width: 300px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    font-size: 1rem;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #222;
+    color: #999;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9rem;
+}
